@@ -13,8 +13,7 @@ function toggleMenu() {
   const tiltSelectors = [
     '.details-container',
     '.btn',
-    '.project-img',
-    '.section__pic-container img'
+    '.project-img'
   ];
 
   function clamp(value, min, max) {

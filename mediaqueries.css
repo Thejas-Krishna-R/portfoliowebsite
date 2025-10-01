@@ -18,7 +18,12 @@
   }
   #hamburger-nav {
     display: flex;
+    background: rgba(17,17,19,0.55);
+    backdrop-filter: saturate(180%) blur(10px);
+    -webkit-backdrop-filter: saturate(180%) blur(10px);
+    border-bottom: 1px solid var(--glass-border);
   }
+  .hamburger-icon span { background-color: #ffffff; }
   #experience,
   .experience-details-container {
     margin-top: 2rem;
@@ -45,6 +50,13 @@
   .about-containers {
     margin-top: 0;
   }
+  /* Mobile dropdown color theme */
+  .menu-links {
+    background: rgba(17,17,19,0.92);
+    border: 1px solid var(--glass-border);
+  }
+  .menu-links a { color: var(--fg-0); }
+  .menu-links a:hover { color: var(--accent); text-decoration-color: var(--accent); }
 }
 
 @media screen and (max-width: 600px) {
