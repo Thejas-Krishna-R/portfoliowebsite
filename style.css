@@ -9,6 +9,14 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(120deg, #f8fbff, #f6f3ff);
+  perspective: 1000px;
+  overflow-x: hidden;
+  background-attachment: fixed;
+  background-size: 100% 100vh;
 }
 
 html {
@@ -426,12 +434,22 @@ article .icon {
 /* FOOTER SECTION */
 
 footer {
-  height: 26vh;
+  height: auto;
+  min-height: unset;
   margin: 0 1rem;
+  padding-bottom: 0.5rem;
+  box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 footer p {
   text-align: center;
+}
+
+@media (max-width: 900px) {
+  footer p {
+    padding: 1.2rem 0 1.2rem 0;
+  }
 }
 
 /* AESTHETIC ENHANCEMENTS */
@@ -442,6 +460,8 @@ body {
   min-height: 100vh;
   perspective: 1000px;
   overflow-x: hidden;
+  background-attachment: fixed;
+  background-size: 100% 100vh;
 }
 
 body::before {
@@ -457,6 +477,9 @@ body::before {
   filter: blur(30px);
   animation: floatBg 18s ease-in-out infinite alternate;
   z-index: -2;
+  height: 100vh;
+  max-height: 100vh;
+  bottom: unset;
 }
 
 @keyframes floatBg {
