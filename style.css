@@ -1,3 +1,52 @@
+@media (max-width: 900px) {
+  html, body {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+  section {
+    margin: 0 0.5rem !important;
+    padding: 0 0.5rem !important;
+    box-sizing: border-box;
+  }
+}
+  /* Show two skills per row in extra small devices for the first details-container only */
+  @media (max-width: 600px) {
+    .about-containers {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .about-containers .details-container:first-child .article-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .about-containers .details-container:first-child .article-container article {
+      flex: 0 0 48%;
+      max-width: 48%;
+      box-sizing: border-box;
+      margin-bottom: 0.5rem;
+      justify-content: flex-start;
+    }
+  }
+  /* Show two skills per row in mobile view for the first details-container only */
+  @media (max-width: 900px) {
+    .about-containers {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .about-containers .details-container:first-child .article-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .about-containers .details-container:first-child .article-container article {
+      flex: 0 0 48%;
+      max-width: 48%;
+      box-sizing: border-box;
+      margin-bottom: 0.5rem;
+      justify-content: flex-start;
+    }
+  }
 /* GENERAL */
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
@@ -45,6 +94,8 @@ nav {
   justify-content: space-around;
   align-items: center;
   height: 17vh;
+  padding: 0 10rem;
+  box-sizing: border-box;
 }
 
 .nav-links {
@@ -105,21 +156,39 @@ a:hover {
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: white;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-radius: 18px;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
   width: fit-content;
   max-height: 0;
   overflow: hidden;
-  transition: all 0.3 ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.4,0,0.2,1), opacity 0.2s;
+  padding: 0.5rem 0.75rem;
+  z-index: 2000;
 }
 
 .menu-links a {
   display: block;
-  padding: 10px;
+  padding: 10px 18px;
   text-align: center;
-  font-size: 1.5rem;
-  color: black;
+  font-size: 1.2rem;
+  color: var(--fg-0);
   text-decoration: none;
-  transition: all 0.3 ease-in-out;
+  border-radius: 10px;
+  margin: 2px 0;
+  transition: background 0.2s, color 0.2s;
+  background: transparent;
+  font-weight: 500;
+  box-shadow: none;
+}
+.menu-links a:hover {
+  background: rgba(59, 130, 246, 0.10);
+  color: var(--accent);
 }
 
 .menu-links li {
@@ -128,6 +197,8 @@ a:hover {
 
 .menu-links.open {
   max-height: 300px;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .hamburger-icon.open span:first-child {
@@ -175,6 +246,7 @@ section {
   justify-content: center;
   gap: 5rem;
   height: 80vh;
+  margin-top: 120px;
 }
 
 /* Shift content when menu open to avoid overlap */
@@ -655,7 +727,9 @@ p { color: var(--fg-1); }
     margin: 0;
     height: 100px;
     min-height: 100px;
-    padding: 0 0.5rem;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    border-left: none !important;
   }
   body {
     padding-top: 40px;
@@ -684,39 +758,43 @@ p { color: var(--fg-1); }
     margin-left: auto;
   }
   #profile {
-    padding-top: 70px; /* Add space for nav bar */
+    margin-top: 110px !important;
+    padding-top: 0 !important;
   }
   .section__pic-container {
     margin-top: 1.5rem;
   }
   footer .nav-links-container {
-    width: 100vw;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     padding: 0;
-    margin: 0;
   }
   footer .nav-links {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
-    gap: 0.5rem !important;
-    width: 100vw !important;
+    gap: 0.2rem !important;
+    width: 100%;
     padding: 0 !important;
     margin: 0 !important;
     justify-content: center !important;
+    font-size: 0.95rem !important;
   }
   footer .nav-links li {
     width: auto !important;
     text-align: center;
-    margin: 0 0.5rem !important;
+    margin: 0 0.1rem !important;
   }
   footer .nav-links li a {
     width: auto !important;
     display: block;
-    padding: 0.75rem 0.5rem;
+    padding: 0.5rem 0.3rem;
     margin: 0;
+    font-size: 0.95rem;
   }
 }
