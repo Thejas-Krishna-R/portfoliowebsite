@@ -21,8 +21,10 @@
       gap: 1rem;
     }
     .about-containers .details-container:first-child .article-container article {
-      flex: 0 0 48%;
-      max-width: 48%;
+      flex: 0 0 48% !important;
+      max-width: 48% !important;
+      width: auto !important;
+      min-width: 0 !important;
       box-sizing: border-box;
       margin-bottom: 0.5rem;
       justify-content: flex-start;
@@ -778,4 +780,4 @@ p { color: var(--fg-1); }
     margin: 0;
     font-size: 0.95rem;
   }
-}
+} */
